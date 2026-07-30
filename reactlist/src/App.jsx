@@ -1,19 +1,32 @@
 import editIcon from './assets/editar.svg'
 import trashIcon from './assets/lixeira.svg'
 import './App.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios';
 
 function App() {
 
-  const [tasklist, setTasklist] = useState([
-    { decricao: "eduardo", id: 1 },
-    { decricao: "eduarda", id: 2 },
-    { decricao: "julia", id: 3 },
-    { decricao: "Maria", id: 4 },
-    { decricao: "xuxa", id: 5 }]);
+  const [tasklist, setTasklist] = useState([]);
+
+    // CRUD
+
+const getTask = async () => {
+
+ try{
+  const APIReturn = await axios.get("http://localhost:3000/taskpoin")
+  const bodyAPI = await APIReturn.data
+  setTasklist(bodyAPI)
+
+ }catch( error){}
+}
+const createTask = () => {}
+const deleteTask = () => {}
+const putTask = () => {}
 
 
-
+useEffect(()=>{
+  getTask()
+},[])
   return (
     <>
       <header className='header-section'>
