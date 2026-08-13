@@ -6,18 +6,6 @@ export const HeaderStyles = StyleSheet.create({
         alignItems: "center",
         width: "100%",
         height: 100,
-
-
-
-
-
-
-
-
-
-
-
-
         // borderWidth: 2,
         // borderStyle: "solid",
         // borderColor: "green",
